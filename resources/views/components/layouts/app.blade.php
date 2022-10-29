@@ -14,6 +14,10 @@
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
 
+    <!-- Styles -->
+    @livewireStyles
+    @powerGridStyles
+
 </head>
 <body>
 
@@ -92,6 +96,11 @@
          </div> --}}
         </main>
     </div>
+
+    <!-- Scripts -->
+
+    @livewireScripts
+    @powerGridScripts
 
 </body>
 </html>

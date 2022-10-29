@@ -50,7 +50,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Tipo Examen:</strong>
-            {!! Form::select('grupos_examenes_id[]', $gruposexamenes, old('grupos_examenes_id' , $tipoexamen->grupos_examenes_id)  , array('class' => 'form-control')) !!}
+            {!! Form::select('tipo_examen_id[]', $gruposexamenes, old('tipo_examen_id' , $empresa->tipoexamen->tipo_examen_id)  , array('class' => 'form-control')) !!}
         </div>
     </div>
 

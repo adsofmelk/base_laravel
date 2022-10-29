@@ -17,7 +17,7 @@
         </div>
     </div>
 
-     <table class="table table-bordered">
+     {{-- <table class="table table-bordered">
         <tr>
             <th>Nombre</th>
             <th>Nit</th>
@@ -46,5 +46,6 @@
 
         </tr>
     @endforeach
-     </table>
+     </table> --}}
+     <livewire:empresas-table/>
 </x-layouts.app>
