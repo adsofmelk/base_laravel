@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EmpresasTipoExamen extends Model
+class TipoDocumentos extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'precio_empresa',
-    ];
-
 }

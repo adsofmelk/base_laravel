@@ -13,17 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_examen', function (Blueprint $table) {
+        Schema::create('tipoestados_agendamientos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',100)->nullable(false);
-            $table->float('precio',10,2)->nullable(false);
+            $table->string('nombre',45)->unique()->nullable(false);
             $table->boolean('estado')->nullable(false)->default(true);
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreignId('grupos_examenes_id')
-                    ->references('id')
-                    ->on('grupos_examenes');
         });
     }
 
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_examen');
+        Schema::dropIfExists('tipoestados_agendamientos');
     }
 };

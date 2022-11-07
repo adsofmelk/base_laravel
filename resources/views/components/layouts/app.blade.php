@@ -14,19 +14,8 @@
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
 
-    <!-- Styles -->
-    @livewireStyles
-    @powerGridStyles
-
 </head>
 <body>
-
-    {{-- @if (session('status'))
-        <div class=''>
-            {{ session('status')}}
-        </div>
-    @endif --}}
-
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -63,6 +52,8 @@
                             <li><a class="nav-link" href="{{ route('users.index') }}">Usuarios</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
                             <li><a class="nav-link" href="{{ route('empresas.index') }}">Empresas</a></li>
+                            <li><a class="nav-link" href="{{ route('pacientes.index') }}">Pacientes</a></li>
+                            <li><a class="nav-link" href="{{ route('agendamiento.index') }}">Agendamiento</a></li>
                             <li><a class="nav-link" href="{{ route('tipoexamen.index') }}">Tipoexamen</a></li>
 
                             <li class="nav-item dropdown">
@@ -96,11 +87,6 @@
          </div> --}}
         </main>
     </div>
-
-    <!-- Scripts -->
-
-    @livewireScripts
-    @powerGridScripts
 
 </body>
 </html>

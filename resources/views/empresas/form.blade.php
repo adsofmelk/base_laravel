@@ -47,11 +47,34 @@
                 @enderror
     </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Tipo Examen:</strong>
-            {!! Form::select('tipo_examen_id[]', $gruposexamenes, old('tipo_examen_id' , $empresa->tipoexamen->tipo_examen_id)  , array('class' => 'form-control')) !!}
-        </div>
-    </div>
+</div>
 
+
+<div class="table-responsive">
+
+
+    <table class="table table-hover table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Nombre Examen</th>
+                <th>Grupo Examen</th>
+                <th>Precio General</th>
+                <th>Precio Empresa</th>
+                {{-- <th>Activo</th> --}}
+            </tr>
+        </thead>
+        <tbody>
+        @foreach ($tipoexamen as $tipo)
+            <tr>
+                <td>{{$tipo->nombre}}</td>
+                <td><span class="badge rounded-pill" style="background-color:{{$tipo->gruposexamenes->color}};">{{$tipo->gruposexamenes->nombre}}</span></td>
+                <td>$ {{number_format($tipo->precio)}}</td>
+                <td>
+                    <input type="text" name="precio_empresa[{{$tipo->id}}]" id="precio_empresa[{{$tipo->id}}]" value="{{ $tipo->custom ?? $tipo->custom, '' }}" placeholder="0">
+                </td>
+                {{-- <td><input name="activo[{{$tipo->id}}]" id="activo[{{$tipo->id}}]" class="form-check-input" type="checkbox" role="switch"  checked></td> --}}
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 </div>

@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('agendamiento', function (Blueprint $table) {
             $table->id();
             $table->timestamp('fecha');
-            $table->string('estado',45)->nullable(false);
             $table->timestamps();
             $table->softDeletes();
 
@@ -29,6 +28,11 @@ return new class extends Migration
             $table->foreignId('empresas_id')
                 ->references('id')
                 ->on('empresas');
+
+
+            $table->foreignId('tipoestados_agendamientos_id')
+                ->references('id')
+                ->on('tipoestados_agendamientos');
 
         });
     }

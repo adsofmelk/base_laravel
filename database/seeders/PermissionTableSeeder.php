@@ -30,6 +30,14 @@ class PermissionTableSeeder extends Seeder
             'tipoexamen-create',
             'tipoexamen-edit',
             'tipoexamen-delete',
+            'pacientes-list',
+            'pacientes-create',
+            'pacientes-edit',
+            'pacientes-delete',
+            'agendamiento-list',
+            'agendamiento-create',
+            'agendamiento-edit',
+            'agendamiento-delete',
         ];
 
         foreach ($permissions as $permission) {

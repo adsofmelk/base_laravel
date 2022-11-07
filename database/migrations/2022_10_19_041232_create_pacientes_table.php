@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('documento',45)->nullable(false);
             $table->string('telefono',20);
             $table->string('email',100);
-            $table->boolean('estado')->nullable(false);
+            $table->boolean('estado')->nullable(false)->default(true);
             $table->timestamps();
             $table->softDeletes();
 

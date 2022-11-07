@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('empresas_tipo_examen', function (Blueprint $table) {
             $table->id();
-            $table->float('porcentaje_descuento',8,2);
-            $table->float('precio_empresa',8,2);
+            $table->float('precio_empresa',10,2);
             $table->timestamps();
             $table->softDeletes();
 

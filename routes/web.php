@@ -6,7 +6,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\TipoExamenController;
-use App\Http\Controllers\EmpresasTipoexamenController;
+use App\Http\Controllers\PacientesController;
+use App\Http\Controllers\AgendamientoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('empresas', EmpresasController::class);
     Route::resource('tipoexamen', TipoExamenController::class);
-    Route::resource('empresastipoexamen', EmpresasTipoexamenController::class);
+    Route::resource('pacientes', PacientesController::class);
+    Route::resource('agendamiento', AgendamientoController::class);
 });

@@ -24,7 +24,8 @@ class TipoExamen extends Model
 
     public function empresas()
     {
-        return $this->belongsToMany(Empresas::class,'empresas','id');
+        return $this->belongsToMany(Empresas::class)->withPivot(['precio_empresa']);
+        // return $this->belongsToMany(Empresas::class,'empresas','id');
     }
 
 }

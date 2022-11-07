@@ -17,35 +17,42 @@
         </div>
     </div>
 
-     {{-- <table class="table table-bordered">
-        <tr>
-            <th>Nombre</th>
-            <th>Nit</th>
-            <th>Telefono</th>
-            <th>Email</th>
-            <th width="280px">Action</th>
-        </tr>
+    <div class="table-responsive">
 
 
-    @foreach ($empresas as $empresa)
-        <tr>
-            <td>{{$empresa->nombre}}</td>
-            <td>{{$empresa->nit}}</td>
-            <td>{{$empresa->telefono}}</td>
-            <td>{{$empresa->email}}</td>
-            <td><a class="btn btn-info" href="{{ route('empresas.show',$empresa) }}">Show</a>
-                @can('empresas-edit')
-                    <a class="btn btn-primary" href="{{ route('empresas.edit',$empresa) }}">Edit</a>
-                @endcan
-                @can('empresas-delete')
-                    {!! Form::open(['method' => 'DELETE','route' => ['empresas.destroy', $empresa],'style'=>'display:inline']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
-                @endcan
-            </td>
+        <table class="table table-hover table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Nit</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th width="280px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($empresas as $empresa)
+                <tr>
+                    <td>{{$empresa->nombre}}</td>
+                    <td>{{$empresa->nit}}</td>
+                    <td>{{$empresa->telefono}}</td>
+                    <td>{{$empresa->email}}</td>
+                    <td><a class="btn btn-info" href="{{ route('empresas.show',$empresa) }}">Show</a>
+                        @can('empresas-edit')
+                            <a class="btn btn-primary" href="{{ route('empresas.edit',$empresa) }}">Edit</a>
+                        @endcan
+                        @can('empresas-delete')
+                            {!! Form::open(['method' => 'DELETE','route' => ['empresas.destroy', $empresa],'style'=>'display:inline']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                        @endcan
+                    </td>
 
-        </tr>
-    @endforeach
-     </table> --}}
-     <livewire:empresas-table/>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+        {!! $empresas->render() !!}
+
 </x-layouts.app>

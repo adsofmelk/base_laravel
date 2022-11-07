@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SaveEmpresaRequest extends FormRequest
+class SavePacienteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,16 +23,16 @@ class SaveEmpresaRequest extends FormRequest
      */
     public function rules()
     {
-        $nitUnique = ($this->isMethod('POST')) ? '|unique:empresas' : '' ;
-        $nombreUnique = ($this->isMethod('POST')) ? '|unique:empresas' : '' ;
+        $documentoUnique = ($this->isMethod('POST')) ? '|unique:pacientes' : '' ;
         return [
-            'nombre' => 'required'.$nitUnique.'|max:100',
-            'nit' => 'required'.$nitUnique.'|max:15',
+            'nombre1' => 'required|max:45',
+            'nombre2' => 'max:45',
+            'apellido1' => 'required|max:45',
+            'apellido2' => 'max:45',
+            'documento' => 'required'.$documentoUnique.'|max:45',
             'telefono' => 'required|max:20',
             'email' => 'required|email:rfc|max:100',
-            'nombre_contacto' => 'max:100',
-            'direccion' => 'max:255',
-            'precio_empresa' => '',
+            'tipo_documentos_id' => '',
         ];
     }
 }

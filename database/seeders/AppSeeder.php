@@ -20,6 +20,7 @@ class AppSeeder extends Seeder
             CreateAdminUserSeeder::class,
             TipoDocumentosSeeder::class,
             GruposExamenesSeeder::class,
+            TipoestadosAgendamientosSeeder::class,
         ]);
     }
 }
